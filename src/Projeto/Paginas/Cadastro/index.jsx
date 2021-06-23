@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './estilo.css'
 import axios from 'axios'
+import http from '../../Componentes/HTTP'
 
 const CadastroDados = (aoSalvar) => {
 
@@ -48,6 +49,9 @@ const CadastroDados = (aoSalvar) => {
         setCpf('')
         setNumeroCell('')
         setDataNascimento('')
+
+        http.post('auth/register', usuario)
+        .then(response => (response.data))
     }
 
 
@@ -68,9 +72,7 @@ const CadastroDados = (aoSalvar) => {
             .catch(erro => {
                 console.log(erro)
             })
-
     }
-
 
     const manipuladorCep = (evento) => {
         if (evento.target.value.length <= 8) {
