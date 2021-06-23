@@ -24,9 +24,9 @@ function App() {
       <Navbar token={token} aoLogout={logout}/>
       <div className="container">
         <Switch>
-          {/* <Route exact path="/">
+          <Route exact path="/">
             <Home />
-          </Route> */}
+          </Route>
           <Route exact path="/login">
             <Login/>
           </Route>

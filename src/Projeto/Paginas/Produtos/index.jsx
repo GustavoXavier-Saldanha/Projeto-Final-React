@@ -6,7 +6,7 @@ const Produtos = () => {
     const [produtos, setProdutos] = useState([])
 
     const mostrarProdutos = () => {
-        axios.get('produtos').then(response => {
+        axios.get('produto').then(response => {
 
             setProdutos(response.data)
         })

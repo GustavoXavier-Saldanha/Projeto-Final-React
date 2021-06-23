@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
+import './estilo.css'
 
 const NavBar = ({token, aoLogout}) => {
 
@@ -40,7 +41,7 @@ const NavBar = ({token, aoLogout}) => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg bg-dark">
       <div>
         <ul className="navbar-nav mr-auto">
           {Itens()}
