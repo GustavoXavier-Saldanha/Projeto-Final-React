@@ -13,11 +13,12 @@
 
 
 7 - criar Páginas:
-  - Cadastro (Email, username, senha, nome, cpf, telefone, data, endereco - (Cep, rua, bairro, cidade, numero, complemento, estado) )
+  - Cadastro (Email, username, senha, nome, data, cpf, telefone, endereco - (Cep, rua, bairro, cidade, numero, complemento, estado) )
   - Login 
   - Produtos
   - Servicos
   - Form Produtos
   - Form Servicos
+
 8 - No App.js, criar os roteamentos:
   - Ver imagem ao lado
