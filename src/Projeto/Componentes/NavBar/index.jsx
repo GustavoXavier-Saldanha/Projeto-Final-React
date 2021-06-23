@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
-import img from './burger_line_list_menu_nav_navigation_option_icon_123231 (1).png'
 
 const NavBar = ({token, aoLogout}) => {
 
@@ -41,13 +40,12 @@ const NavBar = ({token, aoLogout}) => {
   }
 
   return (
-      
-    <nav className="navbar">
-         <div className="container-fluid">
-         <button className="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <span className="navbar-toggler-icon"><img src={img} alt="menu-bars" id="menu-burguer"></span>
-          </button> 
-         </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div>
+        <ul className="navbar-nav mr-auto">
+          {Itens()}
+        </ul>
+      </div>
     </nav>
   )
 }
