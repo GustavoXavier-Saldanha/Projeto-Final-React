@@ -126,10 +126,10 @@ const CadastroDados = () => {
 
     return (
         <div className="container">
-            <div className="row">
+            <form className="row" onSubmit={cadastrar}>
                 <h2>Cadastro</h2>
-                <div className="col-12 col-lg-5" id="Formularios" onSubmit={cadastrar}>
-                    <form>
+              
+                    <div className="col-12 col-lg-5" id="Formularios" >
                         <h3>Dados Pessoais:</h3>
                         <div className="form-group">
                             <label>Nome:</label>
@@ -156,13 +156,12 @@ const CadastroDados = () => {
                             <input className="form-control" required value={dataNascimento} onChange={manipuladorDataNascimento} placeholder="2002-11-11" />
                         </div>
 
-                    </form>
-                </div>
-                <div className="col-1 col-lg-1">
-                </div>
+                    </div>
 
-                <div className="col-12 col-lg-5">
-                    <form>
+                    <div className="col-1 col-lg-1">
+                    </div>
+
+                    <div className="col-12 col-lg-5">
                         <h3>Endereço:</h3>
                         <div className="form-group">
                             <label>CEP:</label>
@@ -188,32 +187,32 @@ const CadastroDados = () => {
                             <label >Estado:</label>
                             <input className="form-control" value={estado} onChange={manipuladorEstado} />
                         </div>
-                    </form>
+                    </div>
 
-                </div>
 
-                <div className="col-12 col-lg-5">
-                    <h3>Contato:</h3>
-                    <div>
-                        <div className="form-group">
-                            <label >Numero Celular:</label>
-                            <input className="form-control" value={telefone} onChange={manipuladorTelefone} placeholder="22999999999" />
+                    <div className="col-12 col-lg-5">
+                        <h3>Contato:</h3>
+                        <div>
+                            <div className="form-group">
+                                <label >Numero Celular:</label>
+                                <input className="form-control" value={telefone} onChange={manipuladorTelefone} placeholder="22999999999" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="form-group">
+                    <div className="form-group">
 
-                    <div class="btn-group me-3" role="group" aria-label="First group">
-                        <button className="btn btn-dark mt-3 block">Cadastrar</button>
+                        <div className="btn-group me-3" role="group" aria-label="First group">
+                            <button className="btn btn-dark mt-3 block">Cadastrar</button>
+                        </div>
+                        <div className="btn-group me-2" role="group" aria-label="Second group">
+                            <button className="btn btn-dark mt-3 block">Já tem uma conta?</button>
+                        </div>
+
                     </div>
-                    <div class="btn-group me-2" role="group" aria-label="Second group">
-                        <button className="btn btn-dark mt-3 block">Já tem uma conta?</button>
-                    </div>
-
-                </div>
 
 
-            </div>
+                
+            </form>
         </div>
     )
 

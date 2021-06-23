@@ -41,7 +41,7 @@ const NavBar = ({token, aoLogout}) => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div>
         <ul className="navbar-nav mr-auto">
           {Itens()}
