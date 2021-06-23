@@ -99,9 +99,9 @@ const CadastroDados = (aoSalvar) => {
         setNumeroCell(evento.target.value)
     }
     const manipuladorSenha = (evento) => {
-       
+        if (evento.target.value.length >= 4) {
             setSenha(evento.target.value)
-    
+        }
     }
     const manipuladorUserName = (evento) => {
         setUserName(evento.target.value)
@@ -145,7 +145,7 @@ const CadastroDados = (aoSalvar) => {
                         </div>
 
                         <div className="form-group">
-                            <label>Cep:</label>
+                            <label>CEP:</label>
                             <input className="form-control" required value={cep} onBlur={obterCep} onChange={manipuladorCep} />
                         </div>
                         <div className="form-group">
@@ -159,6 +159,10 @@ const CadastroDados = (aoSalvar) => {
                         <div className="form-group">
                             <label >Cidade:</label>
                             <input className="form-control" required value={cidade} onChange={manipuladorCidade}/>
+                        </div>
+                        <div className="form-group">
+                            <label >Numero Residencial:</label>
+                            <input className="form-control" required value={numero} onChange={manipuladorNumero}/>
                         </div>
                         <div className="form-group">
                             <label >Estado:</label>
