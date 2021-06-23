@@ -12,7 +12,10 @@ const Login = () => {
             email: email,
             senha: senha
         }
-        http.post('auth/login', usuario)
+        setEmail('')
+        setSenha('')
+
+        http.post('login', usuario)
             .then(response => {
                 console.log(response.data)
                 localStorage.setItem('token', response.data.access_token)

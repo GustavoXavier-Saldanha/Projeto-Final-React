@@ -47,7 +47,7 @@ const CadastroDados = () => {
         setEmail('')
         setSenha('')
         setCpf('')
-        setNumeroCell('')
+        setTelefone('')
         setDataNascimento('')
 
         http.post('cliente', usuario)
