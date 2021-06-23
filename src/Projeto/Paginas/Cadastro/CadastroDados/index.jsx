@@ -48,7 +48,7 @@ const CadastroDados = () => {
                             <input required type="password" value={senha} onChange={(evento) => setSenha(evento.target.value)} className="form-control" />
                         </div>
                         <div className="form-group">
-                            <button className="fas fa-cart-plus"><Link to="/cadastro-endereco">Próximo</Link></button>
+                            <button className="btn btn-primary mt-3 block"><Link to="/cadastro-endereco">Próximo</Link></button>
                         </div>
                     </form>
                 </div>
