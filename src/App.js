@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
+import Login from './Projeto/Paginas/Login'
 
 function App() {
 
@@ -20,8 +21,11 @@ function App() {
       <Navbar token={token} aoLogout={logout}/>
       <div className="container">
         <Switch>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home />
+          </Route> */}
+          <Route exact path="/login">
+            <Login/>
           </Route>
           <Route>
             <Pagina404 />
