@@ -2,13 +2,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
-<<<<<<< HEAD
 import Login from './Projeto/Paginas/Login'
-=======
-import CadastroDados from './Projeto/Paginas/Cadastro/CadastroDados'
+import CadastroDados from './Projeto/Paginas/Cadastro'
 import Home from './Projeto/Paginas/Home' 
 
->>>>>>> 5e337c428af9b199ab499219e7a6926d27c756c8
 
 function App() {
 
