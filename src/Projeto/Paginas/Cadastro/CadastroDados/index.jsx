@@ -29,23 +29,23 @@ const CadastroDados = () => {
                     <form onSubmit={cadastrar}>
                         <div className="form-group">
                             <label>Nome</label>
-                            <input required type="text" value={nome} onChange={(evento) => setNome(evento.target.value)} />
+                            <input required type="text" value={nome} onChange={(evento) => setNome(evento.target.value)} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input required type="email" value={email} onChange={(evento) => setEmail(evento.target.value)} />
+                            <input required type="email" value={email} onChange={(evento) => setEmail(evento.target.value)} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label>CPF</label>
-                            <input required type="text" value={cpf} onChange={(evento) => setCpf(evento.target.value)} />
+                            <input required type="text" value={cpf} onChange={(evento) => setCpf(evento.target.value)} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label>Usuário</label>
-                            <input required type="text" value={username} onChange={(evento) => setUsername(evento.target.value)} />
+                            <input required type="text" value={username} onChange={(evento) => setUsername(evento.target.value)} className="form-control"/>
                         </div>
                         <div className="form-group">
                             <label >Senha</label>
-                            <input required type="password" value={senha} onChange={(evento) => setSenha(evento.target.value)} />
+                            <input required type="password" value={senha} onChange={(evento) => setSenha(evento.target.value)} className="form-control" />
                         </div>
                         <div className="form-group">
                             <button className="fas fa-cart-plus"><Link to="/cadastro-endereco">Próximo</Link></button>
