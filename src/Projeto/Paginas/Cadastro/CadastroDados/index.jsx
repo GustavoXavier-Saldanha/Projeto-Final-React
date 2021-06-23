@@ -1,9 +1,14 @@
+import { Link } from "react-router-dom"
+import { useState } from "react"
+
 const CadastroDados = () => {
+
 
     const [nome, setNome] = useState('')
     const [cpf, setCpf] = useState('')
     const [username, setUsername] = useState('')
     const [senha, setSenha] = useState('')
+    const [email,setEmail] = useState('')
 
     const cadastrar = (evento) => {
         evento.preventDefault();
@@ -43,7 +48,7 @@ const CadastroDados = () => {
                             <input required type="password" value={senha} onChange={(evento) => setSenha(evento.target.value)} />
                         </div>
                         <div className="form-group">
-                            <button className="fas fa-cart-plus">Próximo</button>
+                            <button className="fas fa-cart-plus"><Link to="/cadastro-endereco">Próximo</Link></button>
                         </div>
                     </form>
                 </div>
