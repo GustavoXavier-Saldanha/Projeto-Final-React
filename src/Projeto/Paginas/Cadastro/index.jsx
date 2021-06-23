@@ -22,20 +22,20 @@ const CadastroDados = () => {
     const cadastrar = (evento) => {
         evento.preventDefault()
         const usuario = {
-        cep : cep,
-        numero : numero,
-        rua : rua,
-        cidade : cidade,
-        estado : estado,
-        bairro : bairro,
-        username : username,
-        nome : nome,
-        email : email,
-        senha : senha,
-        cpf : cpf,
-        telefone : telefone,
-        dataNascimento : dataNascimento
-    }
+            cep: cep,
+            numero: numero,
+            rua: rua,
+            cidade: cidade,
+            estado: estado,
+            bairro: bairro,
+            username: username,
+            nome: nome,
+            email: email,
+            senha: senha,
+            cpf: cpf,
+            telefone: telefone,
+            dataNascimento: dataNascimento
+        }
         setCep('')
         setNumero('')
         setCidade('')
@@ -51,7 +51,7 @@ const CadastroDados = () => {
         setDataNascimento('')
 
         http.post('cliente', usuario)
-        .then(response => (response.data))
+            .then(response => (response.data))
     }
 
 
@@ -101,7 +101,7 @@ const CadastroDados = () => {
         setTelefone(evento.target.value)
     }
     const manipuladorSenha = (evento) => {
-            setSenha(evento.target.value)
+        setSenha(evento.target.value)
     }
     const manipuladorUserName = (evento) => {
         setUserName(evento.target.value)
@@ -118,78 +118,101 @@ const CadastroDados = () => {
         setNome(evento.target.value)
     }
 
-    const  manipuladorDataNascimento = (evento) => {
+    const manipuladorDataNascimento = (evento) => {
         setDataNascimento(evento.target.value)
     }
 
 
-  
+
     return (
         <div className="container">
             <div className="row">
-                <div className="col-12 col-lg-6"> 
-                    <form onSubmit={cadastrar}>
+                <h2>Cadastro</h2>
+                <div className="col-12 col-lg-5" id="Formularios" onSubmit={cadastrar}>
+                    <form>
+                        <h3>Dados Pessoais:</h3>
                         <div className="form-group">
                             <label>Nome:</label>
-                            <input className="form-control" required type="text" value={nome} onChange={manipuladorNome} />
+                            <input className="form-control" required type="text" value={nome} onChange={manipuladorNome} placeholder="Seu nome:" />
                         </div>
                         <div className="form-group">
                             <label>Email:</label>
-                            <input className="form-control" required type="email" value={email} onChange={manipuladorEmail} />
+                            <input className="form-control" required type="email" value={email} onChange={manipuladorEmail} placeholder="example@gmail.com" />
                         </div>
                         <div className="form-group">
                             <label>CPF:</label>
-                            <input className="form-control" required type="text" value={cpf} onChange={manipuladorCpf} />
+                            <input className="form-control" required type="text" value={cpf} onChange={manipuladorCpf} placeholder="111.111.111-11" />
                         </div>
                         <div className="form-group">
                             <label>Usuário:</label>
-                            <input className="form-control" required type="text" value={username} onChange={manipuladorUserName} />
+                            <input className="form-control" required type="text" value={username} onChange={manipuladorUserName} placeholder="Digite um Username para você" />
                         </div>
                         <div className="form-group">
                             <label >Senha:</label>
-                            <input className="form-control" required type="password" value={senha} onChange={manipuladorSenha} />
+                            <input className="form-control" required type="password" value={senha} onChange={manipuladorSenha} placeholder="Digite sua senha:" />
                         </div>
                         <div className="form-group">
                             <label >Data de Nascimento:</label>
-                            <input className="form-control" required value={dataNascimento} onChange={manipuladorDataNascimento} />
+                            <input className="form-control" required value={dataNascimento} onChange={manipuladorDataNascimento} placeholder="2002-11-11" />
                         </div>
 
+                    </form>
+                </div>
+                <div className="col-1 col-lg-1">
+                </div>
+
+                <div className="col-12 col-lg-5">
+                    <form>
+                        <h3>Endereço:</h3>
                         <div className="form-group">
                             <label>CEP:</label>
-                            <input className="form-control" required value={cep} onBlur={obterCep} onChange={manipuladorCep} />
+                            <input className="form-control" required value={cep} onBlur={obterCep} onChange={manipuladorCep} placeholder="12345678" />
                         </div>
                         <div className="form-group">
                             <label>Rua:</label>
                             <input className="form-control" required value={rua} onChange={manipuladorRua} />
-                        </div>               
+                        </div>
                         <div className="form-group">
                             <label>Bairro:</label>
                             <input className="form-control" required value={bairro} onChange={manipuladorBairro} />
                         </div>
                         <div className="form-group">
                             <label >Cidade:</label>
-                            <input className="form-control" required value={cidade} onChange={manipuladorCidade}/>
+                            <input className="form-control" required value={cidade} onChange={manipuladorCidade} />
                         </div>
                         <div className="form-group">
                             <label >Numero Residencial:</label>
-                            <input className="form-control" required value={numero} onChange={manipuladorNumero}/>
+                            <input className="form-control" required value={numero} onChange={manipuladorNumero} />
                         </div>
                         <div className="form-group">
                             <label >Estado:</label>
-                            <input className="form-control" value={estado} onChange={manipuladorEstado}/>
+                            <input className="form-control" value={estado} onChange={manipuladorEstado} />
                         </div>
+                    </form>
 
+                </div>
+
+                <div className="col-12 col-lg-5">
+                    <h3>Contato:</h3>
+                    <div>
                         <div className="form-group">
                             <label >Numero Celular:</label>
-                            <input className="form-control" value={telefone} onChange={manipuladorTelefone}/>
+                            <input className="form-control" value={telefone} onChange={manipuladorTelefone} placeholder="22999999999" />
                         </div>
-                        
-                        <div className="form-group">
-                            <button className="btn btn-primary mt-3 block">Cadastrar</button>
-                        </div>
-                        
-                    </form>
+                    </div>
                 </div>
+                <div className="form-group">
+
+                    <div class="btn-group me-3" role="group" aria-label="First group">
+                        <button className="btn btn-dark mt-3 block">Cadastrar</button>
+                    </div>
+                    <div class="btn-group me-2" role="group" aria-label="Second group">
+                        <button className="btn btn-dark mt-3 block">Já tem uma conta?</button>
+                    </div>
+
+                </div>
+
+
             </div>
         </div>
     )
