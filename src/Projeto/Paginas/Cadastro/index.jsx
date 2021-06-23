@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './estilo.css'
 import axios from 'axios'
 import http from '../../Componentes/http'
+import { Link } from 'react-router-dom'
 
 const CadastroDados = () => {
 
@@ -205,7 +206,7 @@ const CadastroDados = () => {
                             <button className="btn btn-dark mt-3 block">Cadastrar</button>
                         </div>
                         <div className="btn-group me-2" role="group" aria-label="Second group">
-                            <button className="btn btn-dark mt-3 block">Já tem uma conta?</button>
+                            <Link  to="/login" className="btn btn-dark mt-3 block">Já tem uma conta? </Link>
                         </div>
 
                     </div>
