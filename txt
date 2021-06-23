@@ -1,0 +1,23 @@
+1 - npx create-react-app - ok
+
+2 - npm i axios
+
+3 - npm i react-router-dom
+
+4 - npm start - ok 
+
+5 - limpar os arquivos do projeto - ok
+
+6 - pasta de componentes
+  - 
+
+
+7 - criar Páginas:
+  - Cadastro (Email, username, senha, nome, cpf, telefone, data, endereco - (Cep, rua, bairro, cidade, numero, complemento, estado) )
+  - Login 
+  - Produtos
+  - Servicos
+  - Form Produtos
+  - Form Servicos
+8 - No App.js, criar os roteamentos:
+  - Ver imagem ao lado
