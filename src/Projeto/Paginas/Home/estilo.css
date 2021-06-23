@@ -1,0 +1,5 @@
+.grid-container{width: 92vw; height: 100vh; padding: 40px; display: grid; grid-template-columns: repeat(6,1fr); grid-template-rows: repeat(6,1fr); grid-gap: 2rem;}
+.first{grid-column: 1 / 6; grid-row: 1 / 6;background-color: rgb(36, 36, 36);}
+.second,.third{ grid-column: 5 / 6w;background-color: rgb(36, 36, 36);}
+.second{ grid-row: 1 / 4;}
+.third{ grid-row: 4 / 6;}

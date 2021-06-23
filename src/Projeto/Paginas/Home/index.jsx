@@ -1,3 +1,5 @@
+import './estilo.css'
+
 const Home = () => {
 
     const titulo = "a nossa Home"
@@ -6,11 +8,12 @@ const Home = () => {
     return (
         <div>
             <div className='home' >
-            
-                <div>
-                    <h1>{titulo}</h1>
-                    <h2>{subTitulo}</h2>
-                </div>
+
+                <section class="grid-container">
+                    <div class="grid-item first"></div>
+                    <div class="grid-item second"></div>
+                    <div class="grid-item third"></div>
+                </section>
 
             </div>
         </div>
