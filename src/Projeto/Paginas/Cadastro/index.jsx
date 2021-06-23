@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './estilo.css'
 import axios from 'axios'
-import http from '../../Componentes/HTTP'
+import http from '../../Componentes/http'
 
-const CadastroDados = (aoSalvar) => {
+const CadastroDados = () => {
 
     const [nome, setNome] = useState('')
     const [cpf, setCpf] = useState('')
@@ -16,26 +16,26 @@ const CadastroDados = (aoSalvar) => {
     const [bairro, setBairro] = useState('')
     const [cidade, setCidade] = useState('')
     const [estado, setEstado] = useState('')
-    const [numeroCell, setNumeroCell] = useState('')
+    const [telefone, setTelefone] = useState('')
     const [dataNascimento, setDataNascimento] = useState('')
 
     const cadastrar = (evento) => {
         evento.preventDefault()
-        const usuario = {}
-        usuario.cep = cep
-        usuario.numero = numero
-        usuario.rua = rua
-        usuario.cidade = cidade
-        usuario.estado = estado
-        usuario.bairro = bairro
-        usuario.username = username
-        usuario.nome = nome
-        usuario.email = email
-        usuario.senha = senha
-        usuario.cpf = cpf
-        usuario.numeroCell = numeroCell
-        usuario.dataNascimento = dataNascimento
-        aoSalvar(usuario)
+        const usuario = {
+        cep : cep,
+        numero : numero,
+        rua : rua,
+        cidade : cidade,
+        estado : estado,
+        bairro : bairro,
+        username : username,
+        nome : nome,
+        email : email,
+        senha : senha,
+        cpf : cpf,
+        telefone : telefone,
+        dataNascimento : dataNascimento
+    }
         setCep('')
         setNumero('')
         setCidade('')
@@ -47,10 +47,10 @@ const CadastroDados = (aoSalvar) => {
         setEmail('')
         setSenha('')
         setCpf('')
-        setNumeroCell('')
+        setTelefone('')
         setDataNascimento('')
 
-        http.post('auth/register', usuario)
+        http.post('cliente', usuario)
         .then(response => (response.data))
     }
 
@@ -97,8 +97,8 @@ const CadastroDados = (aoSalvar) => {
     const manipuladorRua = (evento) => {
         setRua(evento.target.value)
     }
-    const manipuladorNumeroCell = (evento) => {
-        setNumeroCell(evento.target.value)
+    const manipuladorTelefone = (evento) => {
+        setTelefone(evento.target.value)
     }
     const manipuladorSenha = (evento) => {
             setSenha(evento.target.value)
@@ -118,6 +118,12 @@ const CadastroDados = (aoSalvar) => {
         setNome(evento.target.value)
     }
 
+    const  manipuladorDataNascimento = (evento) => {
+        setDataNascimento(evento.target.value)
+    }
+
+
+  
     return (
         <div className="container">
             <div className="row">
@@ -142,6 +148,10 @@ const CadastroDados = (aoSalvar) => {
                         <div className="form-group">
                             <label >Senha:</label>
                             <input className="form-control" required type="password" value={senha} onChange={manipuladorSenha} />
+                        </div>
+                        <div className="form-group">
+                            <label >Data de Nascimento:</label>
+                            <input className="form-control" required value={dataNascimento} onChange={manipuladorDataNascimento} />
                         </div>
 
                         <div className="form-group">
@@ -171,7 +181,7 @@ const CadastroDados = (aoSalvar) => {
 
                         <div className="form-group">
                             <label >Numero Celular:</label>
-                            <input className="form-control" value={numeroCell} onChange={manipuladorNumeroCell}/>
+                            <input className="form-control" value={telefone} onChange={manipuladorTelefone}/>
                         </div>
                         
                         <div className="form-group">
