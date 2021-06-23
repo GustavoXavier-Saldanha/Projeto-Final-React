@@ -101,9 +101,7 @@ const CadastroDados = (aoSalvar) => {
         setNumeroCell(evento.target.value)
     }
     const manipuladorSenha = (evento) => {
-        if (evento.target.value.length >= 4) {
             setSenha(evento.target.value)
-        }
     }
     const manipuladorUserName = (evento) => {
         setUserName(evento.target.value)
