@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
+import Home from './Projeto/Paginas/Home' 
 
 
 function App() {
