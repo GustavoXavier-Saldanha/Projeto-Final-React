@@ -1,5 +1,5 @@
 import axios from "axios"
-import CardCategoria from "../../Componentes/Cards/CardCategorias"
+import Categoria from "../../Componentes/Cards/CardCategorias"
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
@@ -25,7 +25,7 @@ const Categorias = () => {
               <h2>Categorias disponíveis</h2>
               <Link to="/categoria" className="btn btn-dark mt-3 block">Adicionar Categorias</Link>
             <div>
-                {categorias.map((item) => <CardCategoria key={item.id} nome={item.nome} />)}
+                {categorias.map((item) => <Categoria key={item.id} nome={item.nome} />)}
 
             </div>
         </div>
