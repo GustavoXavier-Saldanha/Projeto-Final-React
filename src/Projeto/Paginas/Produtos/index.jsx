@@ -1,5 +1,6 @@
 import axios from 'axios'
 import CardProduto from '../../Componentes/Cards/CardProdutos'
+import { useState, useEffect } from "react";
 
 const Produtos = () => {
 
@@ -20,9 +21,8 @@ const Produtos = () => {
 
     return (
         <div className='tabela'>
-
+            <h2>Produtos disponíveis:</h2>
             <div>
-
                 {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} id={item.id} />)}
 
             </div>

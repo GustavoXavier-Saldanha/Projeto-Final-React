@@ -1,18 +1,23 @@
 import './estilo.css'
+import img1 from './LogoCortadoHome.png'
+import img4 from './imagem menor home.jpg'
+import img3 from './ImagemNikeIMG2.jpg'
+import img2 from './maxresdefault.jpg'
 
 const Home = () => {
 
-    const titulo = "a nossa Home"
-    const subTitulo = "Me edite"
+
 
     return (
         <div>
             <div className='home' >
 
+                <img src={img1} className="Logo-Tela" />
+
                 <section class="grid-container">
-                    <div class="grid-item first"></div>
-                    <div class="grid-item second"></div>
-                    <div class="grid-item third"></div>
+                    <div class="grid-item first"><img src={img2} className="imagem"/></div>
+                    <div class="grid-item second"><img src={img3} className="imagem"/></div>
+                    <div class="grid-item third"><img src={img4} className="imagem"/></div>
                 </section>
 
             </div>
