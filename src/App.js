@@ -32,6 +32,23 @@ function App() {
     }
   }, [])
 
+  const [carrinho, setCarrinho] = useState([]) 
+
+  const adicionaProduto = (produto) => {
+    setCarrinho([
+      ...carrinho,
+      produto
+    ])
+  }
+
+  const excluir = (indice) => {
+    carrinho.splice(indice, 1)
+    setCarrinho([
+      ...carrinho
+    ])
+  }
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -51,7 +68,7 @@ function App() {
               <Produtos />
             </Route>
             <Route exact path="/produto/:id">
-              <ProdutoEspecifico />
+              <ProdutoEspecifico adicionaProduto={adicionaProduto}/>
             </Route>
             <Route exact path="/produtos/novo">
               <NovoProduto />
@@ -63,7 +80,7 @@ function App() {
               <NovaCategoria />
             </Route>
             <Route path ="/pedido">
-            <Carrinho/>
+            <Carrinho produtos={carrinho} excluirProduto={excluir}/>
           </Route>
             <Route>
               <Pagina404 />

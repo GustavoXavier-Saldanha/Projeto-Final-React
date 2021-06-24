@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import './estilo.css'
 import img from './LogoCortadoHome.png'
 
-const NavBar = ({token, aoLogout}) => {
+const NavBar = ({ token, aoLogout }) => {
 
   const history = useHistory();
 
@@ -32,17 +32,17 @@ const NavBar = ({token, aoLogout}) => {
     </>
   }
 
-  
+
   return (
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark ">
       <div>
         <ul className="navbar-nav mr-auto">
 
-        <img src={img} />
+          <img src={img} />
 
 
 
-        <li className="nav-item">
+          <li className="nav-item">
             <Link className="nav-link text-white" to="/">Início</Link>
           </li>
           <li className="nav-item">
@@ -50,6 +50,9 @@ const NavBar = ({token, aoLogout}) => {
           </li>
           <li className="nav-item">
             <Link className="nav-link text-white" to="/categoria/todas">Categoria</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-white" to="/pedido">Carrinho</Link>
           </li>
 
 
