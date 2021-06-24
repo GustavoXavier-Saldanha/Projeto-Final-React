@@ -4,4 +4,6 @@
 .second{ grid-row: 1 / 4;}
 .third{ grid-row: 4 / 6;}
 
+.home img.Logo-Tela {width: 350px;display: block; margin-left: auto; margin-right: auto; margin-top: 5px; }
+
 img.imagem {max-height: 100%;max-width: 100%; object-fit: cover}
