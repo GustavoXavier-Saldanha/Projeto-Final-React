@@ -3,7 +3,7 @@ import './estilo.css'
 
 
 
-const CardProduto = ({ nome, preco, qtdEstoque, imgBase64, id }) => {
+const CardProduto = ({ nome, preco,imgBase64, id }) => {
     return (
         <div className="cardTela row row-cols-1 row-cols-md-4 g-3 ">
             <div className="col">
