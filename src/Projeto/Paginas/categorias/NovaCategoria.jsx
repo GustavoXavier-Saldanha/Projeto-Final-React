@@ -1,5 +1,6 @@
 import { useState } from "react"
 import http from '../../Componentes/http'
+import './estilo.css'
 
 const NovaCategoria = () => {
 
@@ -35,7 +36,7 @@ const NovaCategoria = () => {
   
 
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content">
       <div className="col-md-6">
         <h1>Adicionar Categoria</h1>
         <form onSubmit={salvar}>
@@ -47,7 +48,7 @@ const NovaCategoria = () => {
             <label>Descricao</label>
             <input className="form-control" value={descricao} onChange={manipuladorDescricao} required />
           </div>
-          <button className="btn btn-outline-dark btn-block">
+          <button className="btn adicao">
             Salvar
           </button>
         </form>

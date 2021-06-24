@@ -1,5 +1,6 @@
 import http from "../../Componentes/http"
 import { useEffect, useState } from "react"
+import './estilo.css'
 
 const NovoProduto = () => {
 
@@ -60,7 +61,7 @@ const NovoProduto = () => {
   }
 
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content">
       <div className="col-md-6">
         <h1>Adicionar produto</h1>
         <form onSubmit={salvar}>
@@ -80,9 +81,9 @@ const NovoProduto = () => {
           </div>
           <div className="form-group">
             <label>Imagem</label>
-            <input type="file" onChange={manipuladorArquivo} className="form-control-file" />
+            <input type="file" onChange={manipuladorArquivo} className="form-control arquivoImagem" />
           </div>
-          <button className="btn btn-outline-dark btn-block">
+          <button className="btn adicao">
             Salvar
           </button>
         </form>
