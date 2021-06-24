@@ -17,34 +17,33 @@ const NavBar = ({token, aoLogout}) => {
       return (
         <>
           <li className="nav-item">
-            <Link className="nav-link" to="/">Início</Link>
+            <Link className="nav-link text-white" to="/">Início</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/produtos">Produtos</Link>
+            <Link className="nav-link text-white" to="/produtos">Produtos</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/servicos">Serviços</Link>
+            <Link className="nav-link text-white" to="/categoria">Categoria</Link>
           </li>
           <li className="nav-item">
-            <button className="nav-link btn btn-link" href="" onClick={logout}>Logout</button>
+            <button className="nav-link btn btn-link text-white" href="" onClick={logout}>Logout</button>
           </li>
         </>
       )
     }
     return <>
       <li className="nav-item">
-        <Link className="nav-link" to="/login">Login</Link>
+        <Link className="nav-link text-white" to="/login">Login</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/cadastro">Cadastre-se</Link>
+        <Link className="nav-link text-white" to="/cadastro">Cadastre-se</Link>
       </li>
     </>
   }
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div>
-        
         <ul className="navbar-nav mr-auto">
         <img src={img} />
           {Itens()}

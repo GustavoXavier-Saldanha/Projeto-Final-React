@@ -22,7 +22,7 @@ const Login = ({onLogin}) => {
             user: user,
             pass: senha
         }
-        setUser('')
+        
         setSenha('')
 
         axios.post('http://localhost:8080/auth', usuario)
@@ -63,7 +63,7 @@ const Login = ({onLogin}) => {
 
                 <form onSubmit={efetuarLogin}>
                     <div className="form-group">
-                        <label>User:</label>
+                        <label>E-mail:</label>
                         <input className="form-control" type="text" value={user} placeholder="Digite sua username:" required onChange={manipularUser} placeholder="example@gmail.com"/>
                     </div>
                     <div className="form-group">

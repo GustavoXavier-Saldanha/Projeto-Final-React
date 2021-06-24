@@ -25,7 +25,7 @@ const CadastroDados = () => {
         const usuario = {
             endereco :{
             cep: cep,
-            numero: numero,
+            numeroResidencia: numero,
             rua: rua,
             cidade: cidade,
             estado: estado,
@@ -145,7 +145,7 @@ const CadastroDados = () => {
                         </div>
                         <div className="form-group">
                             <label>CPF:</label>
-                            <input className="form-control" required type="text" value={cpf} onChange={manipuladorCpf} placeholder="111.111.111-11" />
+                            <input className="form-control" required type="text" value={cpf} onChange={manipuladorCpf} placeholder="11111111111" />
                         </div>
                         <div className="form-group">
                             <label>Usuário:</label>
