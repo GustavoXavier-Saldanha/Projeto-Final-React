@@ -1,9 +1,11 @@
 import './estilo.css'
 import img1 from './LogoCortadoHome.png'
 import img3 from './nikePosterCarrousel.jpg'
-// import img4 from './imagem menor home.jpg'
+import img4 from './imagem menor home.jpg'
 // import img3 from './ImagemNikeIMG2.jpg'
 import img2 from './maxresdefault.jpg'
+import img5 from './adidasNmd.jpg'
+import img6 from './air-jordan-1-mid.jpg'
 
 const Home = () => {
 
@@ -42,21 +44,21 @@ const Home = () => {
                     <div className="col-lg-4">
                         <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={img4} alt="" />
                         
-                        <h2>Heading</h2>
-                        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                        <h2>Gazzelle Sport Pack</h2>
+                        <p>The Adidas Gazelle Sport Pack felt very comfortable as per most wearers.</p>
                         <p><a className="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div>
                     <div className="col-lg-4">
-                    <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={img4} alt="" />
-                        <h2>Heading</h2>
-                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                    <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={img5} alt="" />
+                        <h2>Nmd R1 Cinza</h2>
+                        <p>Cápsulas especiais que promovem alto retorno de energia e um amortecimento extremamente macio.</p>
                         <p><a className="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div>
                     <div className="col-lg-4">
-                    <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={img4} alt="" />
+                    <img className="bd-placeholder-img rounded-circle" width="140" height="140" src={img6} alt="" />
 
-                        <h2>Heading</h2>
-                        <p>And lastly this, the third column of representative placeholder content.</p>
+                        <h2>Air Jordan 1 Mid</h2>
+                        <p>Essa nova abordagem do AJ1 apresenta uma base de couro branco com camadas pretas clean.</p>
                         <p><a className="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div>
                 </div>
