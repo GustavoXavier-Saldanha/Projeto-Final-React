@@ -52,7 +52,7 @@ function App() {
             <Route exact path="/produto/:id">
               <ProdutoEspecifico />
             </Route>
-            <Route exact path="/produto">
+            <Route exact path="/produtos/novo">
               <NovoProduto />
             </Route>
             <Route path="/categoria/todas">
