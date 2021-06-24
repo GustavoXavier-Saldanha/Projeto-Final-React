@@ -9,7 +9,7 @@ const CardProduto = ({ nome, preco,url, id }) => {
 
         <div className="cardTela row row-cols-1 row-cols-md-4 g-3 ">
 
-            <div className="col">
+            <div className="col ">
                 <div className="card">
 
                     <img className="card-img-top" src={url} />
