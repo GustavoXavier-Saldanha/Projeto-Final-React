@@ -29,7 +29,7 @@ const Produtos = () => {
                 <Link to="/produto" className="btn btn-dark mt-3 block">Adicionar Produtos</Link>
             </div>
             <div>
-                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} descricao={item.descricao} />)}
+                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} url={item.url} descricao={item.descricao} />)}
 
             </div>
         </div>
