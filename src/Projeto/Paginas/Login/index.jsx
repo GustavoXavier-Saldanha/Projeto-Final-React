@@ -7,7 +7,7 @@ import './estilo.css'
 const Login = ({onLogin}) => {
 
     const [mensagem, setMensagem] = useState('')
-    const [email, setEmail] = useState('');
+    const [user, setUser] = useState('');
     const [senha, setSenha] = useState('');
     const history = useHistory();
 
@@ -19,23 +19,24 @@ const Login = ({onLogin}) => {
     const efetuarLogin = (evento) => {
         evento.preventDefault()
         const usuario = {
-            email: email,
-            senha: senha
+            user: user,
+            pass: senha
         }
-        setEmail('')
+        setUser('')
         setSenha('')
 
-        axios.post('http://localhost:8000/login', usuario)
+        axios.post('http://localhost:8080/auth', usuario)
         .then(response => {
             console.log(response.data)
-            localStorage.setItem('token', response.data.access_token)
-            onLogin(response.data.user, response.data.access_token)
+            localStorage.setItem('token', response.data.token)
+            onLogin(response.data.user, response.data.token)
             history.push('/')
           })
           .catch(erro => {
             console.log('Algo deu errado')
             if (erro.response.data && erro.response.data.message) {
               setMensagem(erro.response.data.message)
+        
             } else {
               setMensagem('OPS... um erro não esperado.')
             }
@@ -45,8 +46,8 @@ const Login = ({onLogin}) => {
           })
       }
 
-    const manipularEmail = (evento) => {
-        setEmail(evento.target.value)
+    const manipularUser = (evento) => {
+        setUser(evento.target.value)
     }
     const manipularSenha = (evento) => {
         setSenha(evento.target.value)
@@ -62,12 +63,12 @@ const Login = ({onLogin}) => {
 
                 <form onSubmit={efetuarLogin}>
                     <div className="form-group">
-                        <label>E-mail:</label>
-                        <input className="form-control" type="email" placeholder="Digite sua email:" required onChange={manipularEmail} placeholder="example@gmail.com"/>
+                        <label>User:</label>
+                        <input className="form-control" type="text" value={user} placeholder="Digite sua username:" required onChange={manipularUser} placeholder="example@gmail.com"/>
                     </div>
                     <div className="form-group">
                         <label>Senha:</label>
-                        <input className="form-control" type="password" placeholder="Digite sua senha:" required onChange={manipularSenha}
+                        <input className="form-control" type="password" value={senha} placeholder="Digite sua senha:" required onChange={manipularSenha}
                         />
                     </div>
 
