@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useHistory } from "react-router-dom";
 import './estilo.css'
+import img from './LogoCortadoHome.png'
 
 const NavBar = ({token, aoLogout}) => {
 
@@ -43,7 +44,9 @@ const NavBar = ({token, aoLogout}) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div>
+        
         <ul className="navbar-nav mr-auto">
+        <img src={img} />
           {Itens()}
         </ul>
       </div>
