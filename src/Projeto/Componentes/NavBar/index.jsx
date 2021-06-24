@@ -37,7 +37,7 @@ const NavBar = ({token, aoLogout}) => {
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div>
         <ul className="navbar-nav mr-auto">
-          
+
         <img src={img} />
 
 
@@ -48,7 +48,7 @@ const NavBar = ({token, aoLogout}) => {
             <Link className="nav-link text-white" to="/produtos">Produtos</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/categoria">Categoria</Link>
+            <Link className="nav-link text-white" to="/categoria/todas">Categoria</Link>
           </li>
 
 

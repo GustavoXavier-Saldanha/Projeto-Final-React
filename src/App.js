@@ -3,7 +3,10 @@ import { useEffect, useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
 import Login from './Projeto/Paginas/Login'
-import Produto from './Projeto/Paginas/Produtos'
+import Categorias from './Projeto/Paginas/Categoria'
+import NovaCategoria from './Projeto/Paginas/categorias/NovaCategoria'
+import Produtos from './Projeto/Paginas/Produtos'
+import NovoProduto from './Projeto/Paginas/produto/novoProduto'
 import CadastroDados from './Projeto/Paginas/Cadastro'
 import Home from './Projeto/Paginas/Home' 
 
@@ -42,8 +45,17 @@ function App() {
           <Route path ="/cadastro">
             <CadastroDados/>
           </Route>
+          <Route path ="/produtos">
+            <Produtos/>
+          </Route>
           <Route path ="/produto">
-            <Produto/>
+            <NovoProduto/>
+          </Route>
+          <Route path ="/categoria/todas">
+            <Categorias/>
+          </Route>
+          <Route path ="/categoria">
+            <NovaCategoria/>
           </Route>
           <Route>
             <Pagina404 />

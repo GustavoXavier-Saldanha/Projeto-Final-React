@@ -1,13 +1,14 @@
-import axios from 'axios'
+import http from '../../Componentes/http'
 import CardProduto from '../../Componentes/Cards/CardProdutos'
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 const Produtos = () => {
 
     const [produtos, setProdutos] = useState([])
 
     const mostrarProdutos = () => {
-        axios.get('produto').then(response => {
+        http.get('produto/todos').then(response => {
 
             setProdutos(response.data)
         })
@@ -15,6 +16,8 @@ const Produtos = () => {
                 console.log(erro)
             })
     }
+
+
     useEffect(() => {
         mostrarProdutos()
     }, [])
@@ -22,8 +25,11 @@ const Produtos = () => {
     return (
         <div className='tabela'>
             <h2>Produtos disponíveis:</h2>
+            <div className="btn-group me-2" role="group" aria-label="Second group">
+                <Link to="/produto" className="btn btn-dark mt-3 block">Adicionar Produtos</Link>
+            </div>
             <div>
-                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} descricao={item.descricao}/>)}
+                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} descricao={item.descricao} />)}
 
             </div>
         </div>

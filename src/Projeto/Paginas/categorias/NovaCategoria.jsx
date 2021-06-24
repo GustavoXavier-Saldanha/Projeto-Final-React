@@ -1,7 +1,7 @@
 import { useState } from "react"
 import http from '../../Componentes/http'
 
-const NovoCategoria = () => {
+const NovaCategoria = () => {
 
   const [nome, setNome] = useState('')
   const [descricao, setDescricao] = useState('')
@@ -14,7 +14,7 @@ const NovoCategoria = () => {
       descricao: descricao
       
     }
-    http.post('categorias/nova', Categoria)
+    http.post('categoria', Categoria)
       .then(response => {
         console.log(response.data)
       })
@@ -57,4 +57,4 @@ const NovoCategoria = () => {
 
 }
 
-export default NovoCategoria
+export default NovaCategoria
