@@ -23,12 +23,14 @@ const CadastroDados = () => {
     const cadastrar = (evento) => {
         evento.preventDefault()
         const usuario = {
+            endereco :{
             cep: cep,
             numero: numero,
             rua: rua,
             cidade: cidade,
             estado: estado,
-            bairro: bairro,
+            bairro: bairro
+            },
             username: username,
             nome: nome,
             email: email,
@@ -37,6 +39,7 @@ const CadastroDados = () => {
             telefone: telefone,
             dataNascimento: dataNascimento
         }
+
         setCep('')
         setNumero('')
         setCidade('')

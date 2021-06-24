@@ -29,7 +29,7 @@ function App() {
             <Home />
           </Route>
           <Route exact path="/login">
-            <Login/>
+            <Login onLogin={onLogin}/>
           </Route>
           <Route path ="/cadastro">
             <CadastroDados/>
