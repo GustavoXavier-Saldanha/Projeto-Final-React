@@ -29,7 +29,7 @@ const Login = ({onLogin}) => {
         .then(response => {
             console.log(response.data)
             localStorage.setItem('token', response.data.token)
-            onLogin(response.data.user, response.data.token)
+            onLogin(response.data.token)
             history.push('/')
           })
           .catch(erro => {

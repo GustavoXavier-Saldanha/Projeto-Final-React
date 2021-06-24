@@ -17,15 +17,6 @@ const NavBar = ({token, aoLogout}) => {
       return (
         <>
           <li className="nav-item">
-            <Link className="nav-link text-white" to="/">Início</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-white" to="/produtos">Produtos</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link text-white" to="/categoria">Categoria</Link>
-          </li>
-          <li className="nav-item">
             <button className="nav-link btn btn-link text-white" href="" onClick={logout}>Logout</button>
           </li>
         </>
@@ -46,8 +37,23 @@ const NavBar = ({token, aoLogout}) => {
     <nav className="navbar navbar-expand-lg  navbar-dark bg-dark">
       <div>
         <ul className="navbar-nav mr-auto">
+          
         <img src={img} />
+
+
+        <li className="nav-item">
+            <Link className="nav-link text-white" to="/">Início</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-white" to="/produtos">Produtos</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link text-white" to="/categoria">Categoria</Link>
+          </li>
+
+
           {Itens()}
+
         </ul>
       </div>
     </nav>

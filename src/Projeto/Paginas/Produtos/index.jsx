@@ -23,7 +23,7 @@ const Produtos = () => {
         <div className='tabela'>
             <h2>Produtos disponíveis:</h2>
             <div>
-                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} descricao={item.descricao}id={item.id} />)}
+                {produtos.map((item) => <CardProduto key={item.id} nome={item.nome} preco={item.preco} descricao={item.descricao}/>)}
 
             </div>
         </div>

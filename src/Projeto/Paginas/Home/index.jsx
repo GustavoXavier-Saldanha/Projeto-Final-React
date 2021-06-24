@@ -1,7 +1,8 @@
 import './estilo.css'
 import img1 from './LogoCortadoHome.png'
-import img4 from './imagem menor home.jpg'
-import img3 from './ImagemNikeIMG2.jpg'
+import img3 from './nikePosterCarrousel.jpg'
+// import img4 from './imagem menor home.jpg'
+// import img3 from './ImagemNikeIMG2.jpg'
 import img2 from './maxresdefault.jpg'
 
 const Home = () => {
@@ -64,8 +65,8 @@ const Home = () => {
                 </div>
             </div>
             </div>
-            )
+            )      
 
 }
 
-            export default Home
+export default Home
