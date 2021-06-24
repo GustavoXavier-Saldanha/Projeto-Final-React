@@ -10,15 +10,17 @@ const EditaProduto = () => {
   const [descricao, setDescricao] = useState('')
   const [codigo, setCodigo] = useState('')
   const [qtdEstoque, setQtdEstoque] = useState('')
+  const [categoria, setCategoria] = useState('')
 
   useEffect(() => {
-    http.get('produtos/' + id)
+    http.get('produto/' + id)
       .then(response => {
         setNome(response.data.nome)
         setPreco(response.data.preco)
         setDescricao(response.data.descricao)
         setCodigo(response.data.codigo)
         setQtdEstoque(response.data.qtdEstoque)
+        setCategoria(response.data.categoria)
       })
   }, [id])
   
@@ -29,8 +31,9 @@ const EditaProduto = () => {
       preco: preco,
       descricao: descricao,
       codigo: codigo,
-      qtdEstoque : qtdEstoque,
-      id: id
+      quantidadeEstoque : qtdEstoque,
+      id: id,
+      categoria: categoria
     }
     http.put('produtos/' + id, produto)
       .then(response => {
@@ -62,6 +65,10 @@ const EditaProduto = () => {
     setQtdEstoque(evento.target.value)
 }
 
+const manipuladorCategoria = (evento) => {
+  setCategoria(evento.target.value)
+}
+
   return (
     <div className="row justify-content-center">
       <div className="col-md-6">
@@ -87,6 +94,12 @@ const EditaProduto = () => {
             <label>Quantidade em estoque</label>
             <input className="form-control" type="number" value={qtdEstoque} onChange={manipuladorQtdEstoque} required />
           </div>
+
+          <div className="form-group">
+            <label>Categoria</label>
+            <input className="form-control" type="number" value={categoria} onChange={manipuladorCategoria} required />
+          </div>
+
           <button className="btn btn-outline-dark btn-block">
             Salvar
           </button>
