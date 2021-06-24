@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
 import Login from './Projeto/Paginas/Login'
@@ -18,6 +18,14 @@ function App() {
   const logout = () => {
     setToken('')
   }
+
+
+  useEffect( () => {
+    const tokenAntigo = localStorage.getItem('token')
+    if (tokenAntigo){
+      setToken(tokenAntigo)
+    }
+  }, [])
 
   return (
     <div className="App">
