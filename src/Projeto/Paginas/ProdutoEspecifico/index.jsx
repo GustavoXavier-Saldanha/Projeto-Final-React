@@ -3,14 +3,11 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import http from '../../Componentes/http'
 
-
 const ProdutoEspecifico = () => {
 
     const [produto, setProduto] = useState([])
 
     const {id} = useParams()
-
-
 
     useEffect(() => {
         http.get('produto/' + id)

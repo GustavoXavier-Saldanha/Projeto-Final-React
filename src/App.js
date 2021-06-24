@@ -10,6 +10,7 @@ import NovoProduto from './Projeto/Paginas/produto/novoProduto'
 import CadastroDados from './Projeto/Paginas/Cadastro'
 import Home from './Projeto/Paginas/Home'
 import ProdutoEspecifico from './Projeto/Paginas/ProdutoEspecifico'
+import Carrinho from './Projeto/Paginas/Carrinho'
 
 
 function App() {
@@ -61,9 +62,9 @@ function App() {
             <Route path="/categoria">
               <NovaCategoria />
             </Route>
-            {/* <Route path ="/pedido">
+            <Route path ="/pedido">
             <Carrinho/>
-          </Route> */}
+          </Route>
             <Route>
               <Pagina404 />
             </Route>
