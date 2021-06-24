@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
 import Pagina404 from './Projeto/Paginas/Pagina404'
 import Login from './Projeto/Paginas/Login'
+import Produto from './Projeto/Paginas/Produtos'
 import CadastroDados from './Projeto/Paginas/Cadastro'
 import Home from './Projeto/Paginas/Home' 
 
@@ -24,14 +25,17 @@ function App() {
       <Navbar token={token} aoLogout={logout}/>
       <div className="container">
         <Switch>
-          {/* <Route exact path="/">
+          <Route exact path="/">
             <Home />
-          </Route> */}
+          </Route>
           <Route exact path="/login">
             <Login/>
           </Route>
           <Route path ="/cadastro">
             <CadastroDados/>
+          </Route>
+          <Route path ="/produto">
+            <Produto/>
           </Route>
           <Route>
             <Pagina404 />
