@@ -2,6 +2,7 @@ import http from "../../Componentes/http"
 import { useEffect, useState } from "react"
 import './estilo.css'
 
+
 const NovoProduto = () => {
 
   const [nome, setNome] = useState('')
@@ -11,7 +12,7 @@ const NovoProduto = () => {
   const [categorias, setCategorias] = useState([])
 
   useEffect(() => {
-    http.get('categorias')
+    http.get('categoria/todas')
       .then(response => setCategorias(response.data))
   }, [])
 
@@ -76,6 +77,8 @@ const NovoProduto = () => {
           <div className="form-group">
             <label>Categoria</label>
             <select value={categoriaId} onChange={manipuladorCategoria} className="form-control">
+              <option>Selecione</option>
+          
               {categorias.map(categoria => <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>)}
             </select>
           </div>
