@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios"
 import MensagemErro from './MensagemErro'
 import { useHistory } from "react-router-dom";
+import './estilo.css'
 
 const Login = ({onLogin}) => {
 
