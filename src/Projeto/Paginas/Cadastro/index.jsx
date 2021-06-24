@@ -145,7 +145,7 @@ const CadastroDados = () => {
                         </div>
                         <div className="form-group">
                             <label>CPF:</label>
-                            <input className="form-control" required type="text" value={cpf} onChange={manipuladorCpf} placeholder="11111111111" />
+                            <input className="form-control" className="form-control cpf-mask" required type="number" value={cpf} onChange={manipuladorCpf} placeholder="11111111111" />
                         </div>
                         <div className="form-group">
                             <label>Usuário:</label>
@@ -169,7 +169,7 @@ const CadastroDados = () => {
                         <h3>Endereço:</h3>
                         <div className="form-group">
                             <label>CEP:</label>
-                            <input className="form-control" required value={cep} onBlur={obterCep} onChange={manipuladorCep} placeholder="12345678" />
+                            <input className="form-control" type="number" required value={cep} onBlur={obterCep} onChange={manipuladorCep} placeholder="12345678" />
                         </div>
                         <div className="form-group">
                             <label>Rua:</label>
