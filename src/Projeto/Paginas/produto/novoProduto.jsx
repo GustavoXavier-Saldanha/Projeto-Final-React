@@ -7,7 +7,7 @@ const NovoProduto = () => {
 
   const [nome, setNome] = useState('')
   const [preco, setPreco] = useState('')
-  const [arquivo, setArquivo] = useState('')
+  const [url, setUrl] = useState('')
   const [categoriaId, setCategoriaId] = useState(0)
   const [categorias, setCategorias] = useState([])
 
@@ -20,10 +20,10 @@ const NovoProduto = () => {
     evento.preventDefault()
     const produto = {
       nome: nome,
+      url: url,
       preco: preco,
-      imagem: arquivo,
       categoria: {
-        id: categoriaId
+      id: categoriaId
       }
     }
 
@@ -50,15 +50,9 @@ const NovoProduto = () => {
     setPreco(evento.target.value)
   }
 
-  const reader = new FileReader();
 
-  const manipuladorArquivo = (evento) => {
-    const arquivos = evento.target.files;
-    const arquivo = arquivos[0];
-    reader.readAsDataURL(arquivo);
-    reader.onload = () => {
-      setArquivo(reader.result);
-    };
+  const manipuladorUrl = (evento) => {
+    setUrl(evento.target.value)
   }
 
   return (
@@ -84,7 +78,7 @@ const NovoProduto = () => {
           </div>
           <div className="form-group">
             <label>Imagem</label>
-            <input type="file" onChange={manipuladorArquivo} className="form-control arquivoImagem" />
+            <input type="text" onChange={manipuladorUrl} className="form-control arquivoImagem" />
           </div>
           <button className="btn adicao">
             Salvar
