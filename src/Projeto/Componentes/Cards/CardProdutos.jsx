@@ -18,7 +18,7 @@ const CardProduto = ({ nome, preco,url, id }) => {
                         <h5 className="card-title">{id} R${preco},00</h5>
                     </div>
 
-                    <Link to={`/produto/${id}`}>
+                    <Link to={`produto/${id}`}>
                         <button className="btn btn-dark mt-3 block">Ir para o produto</button>
                     </Link>
                 </div>

@@ -8,6 +8,9 @@ const NovoProduto = () => {
   const [nome, setNome] = useState('')
   const [preco, setPreco] = useState('')
   const [url, setUrl] = useState('')
+  const [descricao, setDescricao] = useState('')
+  const [codigoProduto, setCodigoProduto] = useState('')
+  const [quantidade, setQuantidade] = useState('')
   const [categoriaId, setCategoriaId] = useState(0)
   const [categorias, setCategorias] = useState([])
 
@@ -22,6 +25,9 @@ const NovoProduto = () => {
       nome: nome,
       url: url,
       preco: preco,
+      descricao: descricao,
+      codigo: codigoProduto,
+      quantidadeEstoque: quantidade,
       categoria: {
       id: categoriaId
       }
@@ -48,6 +54,15 @@ const NovoProduto = () => {
 
   const manipuladorPreco = (evento) => {
     setPreco(evento.target.value)
+  }
+  const manipuladorDescricao = (evento) => {
+    setDescricao(evento.target.value)
+  }
+  const manipuladorQuantidade = (evento) => {
+    setQuantidade(evento.target.value)
+  }
+  const manipuladorCodigoProduto = (evento) => {
+    setCodigoProduto(evento.target.value)
   }
 
 
@@ -77,8 +92,20 @@ const NovoProduto = () => {
             </select>
           </div>
           <div className="form-group">
+            <label>Código do produto</label>
+            <input type="text" value={codigoProduto} onChange={manipuladorCodigoProduto} className="form-control" />
+          </div>
+          <div className="form-group">
+            <label>Descrição</label>
+            <input type="text" value={descricao} onChange={manipuladorDescricao} className="form-control" />
+          </div>
+          <div className="form-group">
+            <label>Quantidade</label>
+            <input type="text" value={quantidade} onChange={manipuladorQuantidade} className="form-control" />
+          </div>
+          <div className="form-group">
             <label>Imagem</label>
-            <input type="text" onChange={manipuladorUrl} className="form-control arquivoImagem" />
+            <input type="text" onChange={manipuladorUrl} className="form-control" />
           </div>
           <button className="btn adicao">
             Salvar

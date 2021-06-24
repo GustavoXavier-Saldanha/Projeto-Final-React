@@ -8,7 +8,8 @@ import NovaCategoria from './Projeto/Paginas/categorias/NovaCategoria'
 import Produtos from './Projeto/Paginas/Produtos'
 import NovoProduto from './Projeto/Paginas/produto/novoProduto'
 import CadastroDados from './Projeto/Paginas/Cadastro'
-import Home from './Projeto/Paginas/Home' 
+import Home from './Projeto/Paginas/Home'
+import ProdutoEspecifico from './Projeto/Paginas/ProdutoEspecifico'
 
 
 function App() {
@@ -23,9 +24,9 @@ function App() {
   }
 
 
-  useEffect( () => {
+  useEffect(() => {
     const tokenAntigo = localStorage.getItem('token')
-    if (tokenAntigo){
+    if (tokenAntigo) {
       setToken(tokenAntigo)
     }
   }, [])
@@ -33,36 +34,42 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Navbar token={token} aoLogout={logout}/>
-      <div className="container">
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/login">
-            <Login onLogin={onLogin}/>
-          </Route>
-          <Route path ="/cadastro">
-            <CadastroDados/>
-          </Route>
-          <Route path ="/produtos">
-            <Produtos/>
-          </Route>
-          <Route path ="/produto">
-            <NovoProduto/>
-          </Route>
-          <Route path ="/categoria/todas">
-            <Categorias/>
-          </Route>
-          <Route path ="/categoria">
-            <NovaCategoria/>
-          </Route>
-          <Route>
-            <Pagina404 />
-          </Route>
-        </Switch>
-      </div>
-    </BrowserRouter>
+        <Navbar token={token} aoLogout={logout} />
+        <div className="container">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login onLogin={onLogin} />
+            </Route>
+            <Route path="/cadastro">
+              <CadastroDados />
+            </Route>
+            <Route exact path="/produtos">
+              <Produtos />
+            </Route>
+            <Route exact path="/produto/:id">
+              <ProdutoEspecifico />
+            </Route>
+            <Route exact path="/produto">
+              <NovoProduto />
+            </Route>
+            <Route path="/categoria/todas">
+              <Categorias />
+            </Route>
+            <Route path="/categoria">
+              <NovaCategoria />
+            </Route>
+            {/* <Route path ="/pedido">
+            <Carrinho/>
+          </Route> */}
+            <Route>
+              <Pagina404 />
+            </Route>
+          </Switch>
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
