@@ -2,7 +2,7 @@
 
 2 - npm i axios - ok
 
-3 - npm i react-router-dom
+3 - npm i react-router-dom ok 
 
 4 - npm start - ok 
 
@@ -13,8 +13,8 @@
 
 
 7 - criar Páginas:
-  -  ok - Cadastro (Email, username, senha, nome, data, cpf, telefone, endereco - (Cep, rua, bairro, cidade, numero, complemento, estado) )
-  -  ok - Login 
+  -  ok - Cadastro (Email, username, senha, nome, data, cpf, telefone, endereco - (Cep, rua, bairro, cidade, numero, complemento, estado) ) ok 
+  -  ok - Login ok 
   - Produtos
   - Servicos
   - Form Produtos
