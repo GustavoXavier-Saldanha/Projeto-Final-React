@@ -58,7 +58,7 @@ const EditaDados = () => {
             },
             id: id
         }
-        http.put('dados/' + id, Dados)
+        http.put('cliente/' + id, Dados)
             .then(response => {
                 console.log(response.data)
             })
@@ -81,7 +81,7 @@ const EditaDados = () => {
     }
 
     const manipuladorRua = (evento) => {
-        setCep(evento.target.value)
+        setRua(evento.target.value)
     }
 
     const manipuladorCidade = (evento) => {

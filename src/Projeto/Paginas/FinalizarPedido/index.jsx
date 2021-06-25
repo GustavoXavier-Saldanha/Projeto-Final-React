@@ -6,7 +6,7 @@ import './estilo.css';
 
 const FinalizaPedido = () => {
 
-    const [pagamento, setPagamentos] = useState(['PIX', 'BOLETO', 'CREDITO', 'DEBITO'])
+    const [formaPagamento, setPagamentos] = useState(['PIX', 'BOLETO', 'CREDITO', 'DEBITO'])
 
     const [status] = useState(['FINALIZADO'])
 
@@ -20,7 +20,7 @@ const FinalizaPedido = () => {
         const pedido = {
             numeroPedido: codigo,
             statusPedido: status,
-            formaPagamento: pagamento
+            formaPagamento: formaPagamento
         }
         http.post('pedido/finalizar', pedido)
             .then(response => {
@@ -45,9 +45,9 @@ const FinalizaPedido = () => {
             <label>Forma de pagamento</label>
 
             <div className="form-group">
-            <select className="selectPagament" value={pagamento} onChange={manipuladorPagamento}>
+            <select className="selectPagament" value={formaPagamento} onChange={manipuladorPagamento}>
                         <option>Escolha uma forma de pagamento</option>
-                        {pagamento.map((pgto, indice) => 
+                        {formaPagamento.map((pgto, indice) => 
                             <option key={indice} value={pgto}>{pgto}</option>
                         )}
                

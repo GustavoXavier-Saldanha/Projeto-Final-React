@@ -6,6 +6,7 @@ import Pagina404 from './Projeto/Paginas/Pagina404'
 import Login from './Projeto/Paginas/Login'
 import Categorias from './Projeto/Paginas/Categoria'
 import NovaCategoria from './Projeto/Paginas/categorias/NovaCategoria'
+import EditarCategoria from './Projeto/Paginas/categorias/EditarCategoria'
 import Produtos from './Projeto/Paginas/Produtos'
 import NovoProduto from './Projeto/Paginas/produto/novoProduto'
 import CadastroDados from './Projeto/Paginas/Cadastro'
@@ -83,6 +84,9 @@ function App() {
             </Route>
             <Route path="/categoria/adicionar">
               <NovaCategoria />
+            </Route>
+            <Route path="/categoria/editar">
+              <EditarCategoria />
             </Route>
             <Route path ="/pedido">
             <Carrinho produtos={carrinho} excluirProduto={excluir}/>

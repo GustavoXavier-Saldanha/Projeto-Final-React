@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import './estilo.css'
-import http from "../../http"
+import http from "../../Componentes/http"
 
-const EditaCategoria = () => {
+const EditarCategoria = () => {
   
     const { id } = useParams()
     const [nome, setNome] = useState('')
     const [descricao, setDescricao] = useState('')
   
     useEffect(() => {
-      http.get('categorias/' + id)
+      http.get('categoria/' + id)
         .then(response => {
           setNome(response.data.nome)
           setDescricao(response.data.descricao)
@@ -24,7 +24,7 @@ const EditaCategoria = () => {
         descricao: descricao,
         id: id
       }
-      http.put('Categorias/' + id, Categoria)
+      http.put('categoria/' + id, Categoria)
         .then(response => {
           console.log(response.data)
         })
@@ -39,7 +39,7 @@ const EditaCategoria = () => {
     }
   
     const manipuladorDescricao = (evento) => {
-      setPreco(evento.target.value)
+      setDescricao(evento.target.value)
     }
   
     return (
@@ -65,4 +65,4 @@ const EditaCategoria = () => {
   
   }
   
-  export default EditaCategoria
+  export default EditarCategoria
