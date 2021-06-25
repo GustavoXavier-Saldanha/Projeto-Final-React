@@ -8,7 +8,7 @@ const Pagina404 = () => {
         <h2>
           Oops!</h2>
         <h3>
-          404 Not Found</h3>
+          Página não encontrada</h3>
       </div>
       <img src={img} className="imagem404" />
     </div>

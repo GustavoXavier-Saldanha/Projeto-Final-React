@@ -12,6 +12,7 @@ import CadastroDados from './Projeto/Paginas/Cadastro'
 import Home from './Projeto/Paginas/Home'
 import ProdutoEspecifico from './Projeto/Paginas/ProdutoEspecifico'
 import Carrinho from './Projeto/Paginas/Carrinho'
+import FinalizarPedido from './Projeto/Paginas/FinalizarPedido'
 
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
     ])
   }
 
-  
+
 
   const excluir = (indice) => {
     carrinho.splice(indice, 1)
@@ -51,6 +52,7 @@ function App() {
     ])
   }
 
+  
 
   return (
     <div className="App">
@@ -84,6 +86,9 @@ function App() {
             </Route>
             <Route path ="/pedido">
             <Carrinho produtos={carrinho} excluirProduto={excluir}/>
+          </Route>
+          <Route path ="/finalizar/:codigo">
+            <FinalizarPedido/>
           </Route>
             <Route>
               <Pagina404 />

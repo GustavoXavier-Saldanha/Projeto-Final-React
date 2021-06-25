@@ -9,7 +9,7 @@ const Carrinho = ({ produtos, excluirProduto }) => {
 
     const criarPedido = () => {
         const pedido = {
-            email: localStorage.getItem('email'),
+            email: localStorage.getItem('user'),
             itens: [
 
             ]

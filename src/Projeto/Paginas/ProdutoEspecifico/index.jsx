@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import http from '../../Componentes/http'
 import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-const ProdutoEspecifico = ({ adicionaProduto, excluirProduto }) => {
+const ProdutoEspecifico = ({ adicionaProduto}) => {
 
     const [produto, setProduto] = useState([])
+    const history = useHistory();
 
     const { id } = useParams()
 
@@ -14,6 +16,13 @@ const ProdutoEspecifico = ({ adicionaProduto, excluirProduto }) => {
         http.get('produto/' + id)
             .then(response => setProduto(response.data))
     }, [id])
+
+function excluirProduto(){
+    http.delete('produto/' + produto.id)
+    .then(console.log("Produto deletado"))
+    .catch(erro => console.log(erro))
+    history.push('/produtos')
+}
 
     return (
         <div className="tenisEspecifico">
