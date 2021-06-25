@@ -42,6 +42,8 @@ function App() {
     ])
   }
 
+  
+
   const excluir = (indice) => {
     carrinho.splice(indice, 1)
     setCarrinho([

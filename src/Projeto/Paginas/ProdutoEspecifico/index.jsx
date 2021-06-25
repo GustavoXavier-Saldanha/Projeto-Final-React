@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import http from '../../Componentes/http'
 import { Link } from 'react-router-dom'
 
-const ProdutoEspecifico = ({ adicionaProduto }) => {
+const ProdutoEspecifico = ({ adicionaProduto, excluirProduto }) => {
 
     const [produto, setProduto] = useState([])
 
@@ -21,18 +21,18 @@ const ProdutoEspecifico = ({ adicionaProduto }) => {
                 <div className="row">
 
                     <div className=" col-12 col-lg-3">
-                    <h1>{produto.nome}</h1>
-                    <h4>{produto.descricao}</h4>
+                        <h1>{produto.nome}</h1>
+                        <h4>{produto.descricao}</h4>
                     </div>
 
                     <div className=" col-12 col-lg-6">
-                        <img src={produto.url} />
+                        <img src={produto.url} className="produtoEspecifico" />
                     </div>
 
                     <div className=" col-12 col-lg-3">
                         <h3 className="freteGreen">Frete gratis</h3>
                         <h3>R${produto.preco},00</h3>
-                        
+
 
                         <div className="btn-group me-2" >
                             <button onClick={() => {
@@ -42,8 +42,13 @@ const ProdutoEspecifico = ({ adicionaProduto }) => {
                     </div>
                 </div>
             </div>
-            <Link  to="/produtos" className="btn mt-3 block">🠔 Voltar para Produtos </Link>
-            
+            <div>
+                <Link to="/produtos" className="btn mt-3 block">🠔 Voltar para Produtos </Link>
+
+                <button onClick={() => {
+                    excluirProduto(produto)
+                }} className="btn btn-danger mt-3 block">Excluir produto</button>
+            </div>
         </div>
     )
 }
