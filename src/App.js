@@ -10,6 +10,7 @@ import EditarCategoria from './Projeto/Paginas/categorias/EditarCategoria'
 import Produtos from './Projeto/Paginas/Produtos'
 import NovoProduto from './Projeto/Paginas/produto/novoProduto'
 import CadastroDados from './Projeto/Paginas/Cadastro'
+import EditaDados from './Projeto/Paginas/Cadastro/EditarCadastro'
 import Home from './Projeto/Paginas/Home'
 import ProdutoEspecifico from './Projeto/Paginas/ProdutoEspecifico'
 import Carrinho from './Projeto/Paginas/Carrinho'
@@ -67,8 +68,11 @@ function App() {
             <Route exact path="/login">
               <Login onLogin={onLogin} />
             </Route>
-            <Route path="/cadastro">
+            <Route exact path="/cadastro">
               <CadastroDados />
+            </Route>
+            <Route exact path="/cadastro/editar">
+              <EditaDados />
             </Route>
             <Route exact path="/produtos">
               <Produtos />

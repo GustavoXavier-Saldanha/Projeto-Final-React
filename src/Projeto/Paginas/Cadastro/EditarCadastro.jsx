@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+
 import './estilo.css'
-import http from "../../http"
+import axios from 'axios'
+import http from "../../Componentes/http"
 
 const EditaDados = () => {
 
-    const { id } = useParams()
+
+    const  user  = localStorage.getItem('user')
     const [nome, setNome] = useState('')
+    const [id, setId] = useState('')
     const [cpf, setCpf] = useState('')
     const [username, setUserName] = useState('')
     const [senha, setSenha] = useState('')
@@ -21,23 +24,24 @@ const EditaDados = () => {
     const [dataNascimento, setDataNascimento] = useState('')
 
     useEffect(() => {
-        http.get('dados/' + id)
+        http.get('cliente/detalhe/' + user)
             .then(response => {
+                setId(response.data.id)
                 setNome(response.data.nome)
-                setCpf(response.data.descricao)
-                setUserName(response.data.descricao)
-                setSenha(response.data.descricao)
-                setCep(response.data.descricao)
-                setEmail(response.data.descricao)
-                setNumero(response.data.descricao)
+                setCpf(response.data.cpf)
+                setUserName(response.data.username)
+                setSenha(response.data.senha)
+                setCep(response.data.cep)
+                setEmail(response.data.email)
+                setNumero(response.data.numero)
                 setBairro(response.data.descricao)
                 setCidade(response.data.descricao)
                 setEstado(response.data.descricao)
-                setTelefone(response.data.descricao)
-                setDataNascimento(response.data.descricao)
+                setTelefone(response.data.telefone)
+                setDataNascimento(response.data.dataNascimento)
 
             })
-    }, [id])
+    }, [user])
 
     const salvar = (evento) => {
         evento.preventDefault()
@@ -66,11 +70,29 @@ const EditaDados = () => {
                 console.log('Algo deu errado')
                 console.log(erro)
             })
+        
     }
 
-    const manipuladorNome = (evento) => {
-        setNome(evento.target.value)
+
+    const obterCep = (evento) => {
+        if (!evento.target.value) {
+            return
+        }
+        const url = `https://viacep.com.br/ws/${evento.target.value}/json`
+        axios.get(url)
+            .then(response => {
+                if (!response.data.erro) {
+                    setRua(response.data.logradouro)
+                    setBairro(response.data.bairro)
+                    setEstado(response.data.uf)
+                    setCidade(response.data.localidade)
+                }
+            })
+            .catch(erro => {
+                console.log(erro)
+            })
     }
+
 
     const manipuladorCep = (evento) => {
         setCep(evento.target.value)

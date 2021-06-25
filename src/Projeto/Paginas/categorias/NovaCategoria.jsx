@@ -15,6 +15,8 @@ const NovaCategoria = () => {
       descricao: descricao
       
     }
+    setNome('')
+    setDescricao('')
     http.post('categoria', Categoria)
       .then(response => {
         console.log(response.data)

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const Carrinho = ({ produtos, excluirProduto }) => {
 
     const history = useHistory()
-
+    
     const criarPedido = () => {
         const pedido = {
             email: localStorage.getItem('user'),

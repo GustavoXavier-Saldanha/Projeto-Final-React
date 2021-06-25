@@ -31,11 +31,12 @@ function excluirProduto(){
 
                     <div className=" col-12 col-lg-3">
                         <h1>{produto.nome}</h1>
-                        <h4>{produto.descricao}</h4>
+                        <h5>{produto.descricao}</h5>
+                        <h5>{produto.descricao}</h5>
                     </div>
 
                     <div className=" col-12 col-lg-6">
-                        <img src={produto.url} className="produtoEspecifico" />
+                        <img src={produto.url} className="img-fluid" />
                     </div>
 
                     <div className=" col-12 col-lg-3">

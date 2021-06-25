@@ -31,7 +31,14 @@ const NovoProduto = () => {
       categoria: {
       id: categoriaId
       }
+      
     }
+    setNome('')
+    setUrl('')
+    setPreco('')
+    setDescricao('')
+    setCodigoProduto('')
+    setQuantidade('')
 
     console.log(produto)
     http.post('produto', produto)

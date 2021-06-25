@@ -6,9 +6,9 @@ import './estilo.css'
 const CardProduto = ({ nome, preco, url, id }) => {
 
     return (
-
-        
-                <div className="card col-12 col-lg-5">
+<div className="col-12 col-lg-4">
+        <div className="col">
+                <div className="card">
 
                     <img className="card-img-top" src={url} />
                     <div className="card-body">
@@ -20,8 +20,8 @@ const CardProduto = ({ nome, preco, url, id }) => {
                         <button className="btn btn-dark mt-3 block">Ir para o produto</button>
                     </Link>
                 </div>
-
-   
+        </div>
+</div>
 
     )
 }

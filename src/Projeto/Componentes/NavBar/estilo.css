@@ -1,2 +1,4 @@
 nav.navbar {font-size: 20px; }
 .navbar img{height: 35px; margin: auto auto;}
+
+div.navBarHome{display: flex; justify-content: space-between;}
