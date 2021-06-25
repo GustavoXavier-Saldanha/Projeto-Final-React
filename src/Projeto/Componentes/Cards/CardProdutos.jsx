@@ -14,8 +14,8 @@ const CardProduto = ({ nome, preco,url, id }) => {
 
                     <img className="card-img-top" src={url} />
                     <div className="card-body">
-                        <h5 className="card-title">{id} {nome}</h5>
-                        <h5 className="card-title">{id} R${preco},00</h5>
+                        <h5 className="card-title"> {nome}</h5>
+                        <h5 className="card-title"> R${preco},00</h5>
                     </div>
 
                     <Link to={`produto/${nome}`}>

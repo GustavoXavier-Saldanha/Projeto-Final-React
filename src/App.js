@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Navbar from './Projeto/Componentes/NavBar'
+import Rodape from './Projeto/Componentes/Rodape'
 import Pagina404 from './Projeto/Paginas/Pagina404'
 import Login from './Projeto/Paginas/Login'
 import Categorias from './Projeto/Paginas/Categoria'
@@ -87,6 +88,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Rodape/>
       </BrowserRouter>
     </div>
   );
