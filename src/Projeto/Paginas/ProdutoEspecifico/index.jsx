@@ -30,7 +30,7 @@ const ProdutoEspecifico = ({ adicionaProduto }) => {
                     </div>
 
                     <div className=" col-12 col-lg-3">
-                        
+                        <h3 className="freteGreen">Frete gratis</h3>
                         <h3>R${produto.preco},00</h3>
                         
 

@@ -3,14 +3,13 @@ import './estilo.css'
 
 
 
-const CardProduto = ({ nome, preco,url, id }) => {
+const CardProduto = ({ nome, preco, url, id }) => {
 
     return (
 
-        <div className="cardTela row row-cols-1 row-cols-md-4 g-3 ">
-
-            <div className="col geral">
-                <div className="card">
+        <div className="container">
+            <div className="row ">
+                <div className="card col-12 col-lg-5">
 
                     <img className="card-img-top" src={url} />
                     <div className="card-body">
@@ -22,8 +21,9 @@ const CardProduto = ({ nome, preco,url, id }) => {
                         <button className="btn btn-dark mt-3 block">Ir para o produto</button>
                     </Link>
                 </div>
+
             </div>
-        </div>
+            </div>
 
     )
 }

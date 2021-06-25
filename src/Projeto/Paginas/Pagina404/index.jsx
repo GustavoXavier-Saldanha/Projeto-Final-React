@@ -1,16 +1,16 @@
 import './estilo.css'
-import img from './converse.png'
+import img from './tenisFio.png'
 
 const Pagina404 = () => {
   return (
-    <div >
+    <div className="telaErro">
       <div className="alert alert-light" role="alert">
-        <h1>
-          Oops!</h1>
         <h2>
-          404 Not Found</h2>
+          Oops!</h2>
+        <h3>
+          404 Not Found</h3>
       </div>
-      <img src={img} alt="" />
+      <img src={img} className="imagem404" />
     </div>
 
   )
