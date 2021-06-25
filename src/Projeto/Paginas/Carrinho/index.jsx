@@ -1,7 +1,7 @@
 import './estilo.css';
 import { useHistory } from "react-router-dom";
 import http from '../../Componentes/http';
-
+import { Link } from 'react-router-dom'
 
 const Carrinho = ({ produtos, excluirProduto }) => {
 
@@ -60,6 +60,7 @@ const Carrinho = ({ produtos, excluirProduto }) => {
                         </tbody>
                     </table>
                     <button onClick={criarPedido} className="btn btn-dark mt-3 block">Comprar</button>
+                    <Link  to="/produtos" className="btn mt-3 block">Comprar mais itens</Link>
                 </div>
             </div>
         </div>
