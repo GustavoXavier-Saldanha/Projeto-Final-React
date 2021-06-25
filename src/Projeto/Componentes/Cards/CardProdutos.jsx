@@ -7,8 +7,7 @@ const CardProduto = ({ nome, preco, url, id }) => {
 
     return (
 
-        <div className="container">
-            <div className="row ">
+        
                 <div className="card col-12 col-lg-5">
 
                     <img className="card-img-top" src={url} />
@@ -22,8 +21,7 @@ const CardProduto = ({ nome, preco, url, id }) => {
                     </Link>
                 </div>
 
-            </div>
-            </div>
+   
 
     )
 }

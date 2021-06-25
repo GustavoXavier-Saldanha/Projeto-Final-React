@@ -28,9 +28,11 @@ const Produtos = () => {
             <div className="btn-group me-2" role="group" aria-label="Second group">
                 <Link to="/produtos/novo" className="btn btn-dark mt-3 block">Adicionar Produtos</Link>
             </div>
-            <div>
+            <div className="container">
+            <div className="row justify-content-evenly">
                 {produtos.map((item) => <CardProduto key={item.id} id={item.id} nome={item.nome} preco={item.preco} url={item.url} descricao={item.descricao} />)}
 
+            </div>
             </div>
         </div>
     )

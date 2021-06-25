@@ -34,7 +34,7 @@ const Categorias = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {categorias.map(categoria => <tr key={categoria.id}><td>{categoria.nome}</td><td>{categoria.descricao}</td><td><Link className="btn btn-dark">Ver produtos</Link></td><td><Link to="/categoria/editar" className="btn btn-warning ">Editar Categoria</Link></td></tr>)}
+                        {categorias.map(categoria => <tr key={categoria.id}><td>{categoria.nome}</td><td>{categoria.descricao}</td><td><Link className="btn btn-dark">Ver produtos</Link></td><td><Link to={`/categoria/editar/${categoria.id}`} className="btn btn-warning ">Editar Categoria</Link></td></tr>)}
                     
                    
                     </tbody>

@@ -55,9 +55,14 @@ const EditarCategoria = () => {
               <label>Descrição</label>
               <input className="form-control" type="text" value={descricao} onChange={manipuladorDescricao} required />
             </div>
-            <button className="btn btn-outline-dark btn-block">
+            <div  >
+
+            <button className="btn btn-dark text-light btn-outline-dark">
               Salvar
             </button>
+
+            </div>
+            
           </form>
         </div>
       </div>

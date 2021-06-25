@@ -85,7 +85,7 @@ function App() {
             <Route path="/categoria/adicionar">
               <NovaCategoria />
             </Route>
-            <Route path="/categoria/editar">
+            <Route path="/categoria/editar/:id">
               <EditarCategoria />
             </Route>
             <Route path ="/pedido">
