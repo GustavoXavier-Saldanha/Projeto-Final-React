@@ -1,5 +1,5 @@
 import http from "../../Componentes/http"
-import Categoria from "../../Componentes/Cards/CardCategorias"
+
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
