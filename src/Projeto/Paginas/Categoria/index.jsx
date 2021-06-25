@@ -31,7 +31,7 @@ const Categorias = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {categorias.map(categoria => <tr key={categoria.id}><td>{categoria.nome}</td><td>{categoria.descricao}</td><td><Link>Detalhes</Link></td></tr>)}
+                        {categorias.map(categoria => <tr key={categoria.id}><td>{categoria.nome}</td><td>{categoria.descricao}</td><td><Link className="btn btn-dark">Ver produtos</Link></td></tr>)}
                     </tbody>
                 </table>
             </div>
