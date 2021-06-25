@@ -78,10 +78,10 @@ function App() {
             <Route exact path="/produtos/novo">
               <NovoProduto />
             </Route>
-            <Route path="/categoria/todas">
+            <Route  exact path="/categoria/todas">
               <Categorias />
             </Route>
-            <Route path="/categoria">
+            <Route path="/categoria/adicionar">
               <NovaCategoria />
             </Route>
             <Route path ="/pedido">

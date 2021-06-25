@@ -1,34 +1,38 @@
-import axios from "axios"
-import Categoria from "../../Componentes/Cards/CardCategorias"
+import http from "../../Componentes/http"
+
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 
 const Categorias = () => {
 
-    const [categorias, setCategorias] = useState([])
-
-    const mostrarCategorias = () => {
-        axios.get('categoria/todas').then(response => {
-
-            setCategorias(response.data)
-        })
-            .catch(erro => {
-                console.log(erro)
-            })
-    }
+    const [categorias, setCategoria] = useState([])
+    
     useEffect(() => {
-        mostrarCategorias()
+        http.get('categoria/todas')
+            .then(response => {
+                setCategoria(response.data)
+            })
     }, [])
-
+    
     return (
-        <div >
-              <h2>Categorias disponíveis</h2>
-              <Link to="/categoria" className="btn btn-dark mt-3 block">Adicionar Categorias</Link>
-            <div>
-                {categorias.map((item) => <Categoria key={item.id} nome={item.nome} />)}
-
+        <div className="container">
+            <div className="col-8">
+                <table className="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Categorias</th>
+                            <th>Informações</th>
+                            <th>Produtos desta categoria</th>
+                            <th>Criar categoria</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {categorias.map(categoria => <tr key={categoria.id}><td>{categoria.nome}</td><td>{categoria.descricao}</td><td><Link>Detalhes</Link></td><td><Link to="/categoria/adicionar" >Adicionar</Link></td></tr>)}
+                    </tbody>
+                </table>
             </div>
         </div>
     )
-}
+    }
+   
 export default Categorias
