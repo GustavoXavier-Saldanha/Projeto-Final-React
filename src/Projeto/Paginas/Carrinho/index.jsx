@@ -31,7 +31,7 @@ const Carrinho = ({ produtos, excluirProduto }) => {
         <div className="container">
             <h1>Carrinho</h1>
             <div className="row">
-                <div class="col-lg-12">
+                <div className="col-lg-12">
                     <table className="table mt-4">
                         <thead>
                             <tr>
