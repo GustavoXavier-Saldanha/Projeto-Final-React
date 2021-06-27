@@ -3,8 +3,9 @@ import './estilo.css'
 import axios from 'axios'
 import http from '../../Componentes/http'
 import { Link } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
-const CadastroDados = () => {
+const CadastroDados = (onCadastro) => {
 
     const [nome, setNome] = useState('')
     const [cpf, setCpf] = useState('')
@@ -19,6 +20,7 @@ const CadastroDados = () => {
     const [estado, setEstado] = useState('')
     const [telefone, setTelefone] = useState('')
     const [dataNascimento, setDataNascimento] = useState('')
+    const history = useHistory();
 
     const cadastrar = (evento) => {
         evento.preventDefault()
@@ -72,11 +74,15 @@ const CadastroDados = () => {
                     setEstado(response.data.uf)
                     setCidade(response.data.localidade)
                 }
+            onCadastro(response.data.token)
+            history.push('/login')
             })
             .catch(erro => {
                 console.log(erro)
             })
     }
+
+
 
     const manipuladorCep = (evento) => {
         if (evento.target.value.length <= 8) {
