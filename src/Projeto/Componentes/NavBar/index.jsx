@@ -17,7 +17,7 @@ const NavBar = ({ token, aoLogout, user }) => {
       return (
         <>
           <li className="nav-item">
-            <button className="nav-link btn btn-link text-white" href="" onClick={logout}>Logout</button>
+            <button className="nav-link btn btn-link text-white BtnLogout" onClick={logout}>Logout</button>
           </li>
           <li className="nav-item">
             <Link className="nav-link text-white" to="/cadastro/editar" >Editar Conta</Link>
@@ -26,8 +26,8 @@ const NavBar = ({ token, aoLogout, user }) => {
       )
     }
     return <>
-      <li className="nav-item">
-        <Link className="nav-link text-white" to="/login">Login</Link>
+      <li className="nav-item ">
+        <Link className="nav-link text-white " to="/login">Login</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link text-white" to="/cadastro">Cadastre-se</Link>

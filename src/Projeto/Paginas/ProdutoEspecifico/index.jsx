@@ -32,7 +32,7 @@ function excluirProduto(){
                     <div className=" col-12 col-lg-3">
                         <h1>{produto.nome}</h1>
                         <h5>{produto.descricao}</h5>
-                        <h5>{produto.descricao}</h5>
+                    
                     </div>
 
                     <div className=" col-12 col-lg-6">
