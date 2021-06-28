@@ -1,14 +1,14 @@
-import './estilo.css';
+ import './estilo.css';
  import { useState} from "react";
  import {useParams } from "react-router-dom";
  import http from '../../Componentes/http';
- 
-
+ import MensagemErro from './MensagemErro';
+     
 const FinalizaPedido = () => {
 
     const [pagamentos] = useState(['PIX', 'BOLETO', 'CREDITO', 'DEBITO'])
     const [formaPagamento, setPagamentos] = useState('')
-
+    const [mensagem, setMensagem] = useState('')
     const [status] = useState(['FINALIZADO'])
 
 
@@ -26,6 +26,10 @@ const FinalizaPedido = () => {
         http.post('pedido/finalizar', pedido)
             .then(response => {
                 console.log(response);
+                setMensagem('O pedido foi cadastrado com sucesso!')
+                setTimeout(() => {
+                  setMensagem('')
+                }, 5000);
             }
             ).catch(erro => {
                 console.log(erro);
@@ -60,6 +64,7 @@ const FinalizaPedido = () => {
             Finalizar Pedido
           </button>
         </form>
+        {mensagem && <MensagemErro msg={mensagem} /> }
       </div>
     </div>
     )
